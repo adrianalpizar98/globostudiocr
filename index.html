@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Globo Studio CR | Serigrafía & Catálogo de Globos</title>
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="top-strip">
+    <div>Globo Studio CR &bull; Globos de Látex Personalizados de Costa Rica &bull; Curridabat, Costa Rica</div>
+    <div>Una unidad operativa de <a href="index.html">Solvifex Holding Group</a></div>
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="brand-container">
+        <div class="gs-balloons">
+          <div class="gs-b-red">G</div>
+          <div class="gs-b-blue">S</div>
+        </div>
+        <div class="brand-text">
+          <span class="txt-globo">GLOBO</span>
+          <span class="txt-studio">STUDIO</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#precios">Precios por Lote</a>
+        <a href="#num40">Globos N° 40</a>
+        <a href="#inventario">Catálogo</a>
+        <a href="#cotizador">Cotizador</a>
+        <a href="https://wa.me/50671730138?text=Hola%20Globo%20Studio%20CR%2C%20quiero%20cotizar%20globos" target="_blank" class="btn-wa-header">WhatsApp Directo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge-hero">Estampado en Serigrafía &bull; Costa Rica</div>
+      <h1>Globos con Impresión de tu Marca <span>por Volumen</span></h1>
+      <p>Precios oficiales en función de la cantidad solicitada. Incluye el globo con la impresión serigráfica de tu logotipo o arte para eventos y activaciones.</p>
+    </section>
+
+    <!-- Tabulador de Precios Oficiales -->
+    <section class="pricing-wrap" id="precios">
+      <div class="tier-grid">
+        <div class="tier-card tier-popular">
+          <div class="tier-popular-tag">Lote Mínimo - Impresión a un Color</div>
+          <div class="tier-qty">100 Globos</div>
+          <div class="tier-price">₡17.500</div>
+          <div class="tier-unit">₡175 por unidad</div>
+          <div class="tier-note">Ideal para eventos corporativos, aniversarios y activaciones locales.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-qty">100 a 999 Globos</div>
+          <div class="tier-price">₡175</div>
+          <div class="tier-unit">por unidad</div>
+          <div class="tier-note">Tirajes medianos para inauguraciones de tiendas y campañas de fin de semana.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-qty">1.000 a 1.999 Globos</div>
+          <div class="tier-price">₡150</div>
+          <div class="tier-unit">por unidad</div>
+          <div class="tier-note">Precio de escala para activaciones comerciales y ferias masivas.</div>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-qty">2.000 o más Globos</div>
+          <div class="tier-price">₡110</div>
+          <div class="tier-unit">por unidad</div>
+          <div class="tier-note">Tarifa preferencial para distribución nacional, agencias y gran volumen.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Globos Número 40 -->
+    <section class="special-banner" id="num40">
+      <div class="banner-box">
+        <div>
+          <h2>Globos Número 40 (Gigantes)</h2>
+          <p>Globos metálicos de 40 pulgadas en forma de números, indispensables para cumpleaños, aniversarios de empresa y sesiones fotográficas.</p>
+        </div>
+        <div class="pricing-rule">
+          <div class="rule-item">
+            <strong>Compra Individual:</strong> Pedido mínimo de <strong>2 unidades</strong> desde <strong>₡12.000 CRC</strong> cada uno.
+          </div>
+          <div class="rule-item" style="margin-bottom:0;">
+            <strong>Combo Sinergia:</strong> Si compras otro tipo de globos (serigrafía o temáticos), pedido mínimo de <strong>1 unidad</strong> a solo <strong>₡10.000 CRC</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cotizador Automatizado -->
+    <section class="calc-box" id="cotizador">
+      <h2>Calculador de Pedido Automatizado</h2>
+      <p>Configura tu pedido para aplicar las escalas de serigrafía o la tarifa de los números 40:</p>
+
+      <div class="input-row">
+        <div>
+          <label for="tipoProducto">Línea de Producto</label>
+          <select id="tipoProducto" onchange="actualizarInterfaz()">
+            <option value="serigrafia">Globos con Serigrafía (1 Tinta)</option>
+            <option value="multicolor">Impresión multicolor de hasta 5 colores</option>
+            <option value="cinco_caras">Impresión de 5 caras</option>
+            <option value="num40">Globos Número 40</option>
+          </select>
+        </div>
+        <div>
+          <label for="cantInput" id="cantLabel">Cantidad (Mínimo 100)</label>
+          <input type="number" id="cantInput" value="100" min="100" step="50" oninput="calcularPresupuesto()" />
+        </div>
+        <div class="checkbox-wrap" id="comboWrap" style="display:none;">
+          <input type="checkbox" id="comboCheck" onchange="calcularPresupuesto()" />
+          <label for="comboCheck" style="margin:0; text-transform:none; font-weight:normal; cursor:pointer;">¿Este pedido incluye también otros tipos de globos? (Aplica tarifa de ₡10.000 c/u, mín. 1)</label>
+        </div>
+      </div>
+
+      <div class="calc-output" id="outCalc">
+        <strong id="montoTotalTxt">₡17.500 CRC</strong>
+        <p id="descDetalleTxt">100 globos con impresión serigráfica incluida a ₡175 por unidad.</p>
+        <a href="#" target="_blank" class="btn-wa-action" id="waLinkBtn">Confirmar Pedido vía WhatsApp &rarr;</a>
+      </div>
+    </section>
+
+    <!-- Catálogo de Inventario con Imágenes -->
+    <section class="inventory-section" id="inventario">
+      <div class="sec-header">
+        <h2>Inventario & Kits Temáticos Disponibles</h2>
+        <p>Materiales en stock listos para producción y despachos en Costa Rica:</p>
+      </div>
+
+      <div class="inventory-grid">
+        <!-- R9 -->
+        <div class="inv-card">
+          <div class="card-img-wrap">
+            <img src="img/surtido.png" alt="Colores de Globos" />
+          </div>
+          <div class="card-content">
+            <div>
+              <span class="inv-tag">Látex Estándar</span>
+              <h3>Globos 9 (R9)</h3>
+              <p>Medida ideal para distribución publicitaria masiva y reparto en ferias con varilla.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- R12 -->
+        <div class="inv-card">
+          <div class="card-img-wrap">
+            <img src="img/surtido.png" alt="Colores de Globos" />
+          </div>
+          <div class="card-content">
+            <div>
+              <span class="inv-tag">Látex Profesional</span>
+              <h3>Globos 12 (R12)</h3>
+              <p>Mayor capacidad volumétrica y contraste cromático. Aptos para inflado con helio o aire.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Halloween -->
+        <div class="inv-card">
+          <div class="card-img-wrap">
+            <img src="img/halloween_thumb.png" alt="Kit Arcos Halloween Globo Studio" onerror="this.src='https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=600&q=80'" />
+          </div>
+          <div class="card-content">
+            <div>
+              <span class="inv-tag" style="color:#D97706;">Kit Escénico Temático</span>
+              <h3>Kit Arcos Halloween</h3>
+              <p>Set completo de Halloween.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Disco Esfera -->
+        <div class="inv-card">
+          <div class="card-img-wrap">
+            <img src="img/disco_thumb.jpg" alt="Globos Esfera Disco Globo Studio" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80'" />
+          </div>
+          <div class="card-content">
+            <div>
+              <span class="inv-tag" style="color:#475569;">Foil Reflectivo 4D</span>
+              <h3>Globos Esfera Disco</h3>
+              <p>Globos esféricos metalizados con patrón de mosaico reflectivo plateado (10", 15", 18" y 22") para montajes escénicos.</p>
+            </div>
+            <div class="color-bullets">Kit Completo o ventas por unidad, precio según tamaño</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Globo Studio CR &bull; Taller de serigrafía en globos de látex en Costa Rica.</p>
+    <p style="font-size: 0.78rem; margin-top: 5px; color: #94A3B8;">Una división operativa respaldada por Solvifex Holding Group. Facturación registrada bajo Adrian Alpizar Bermudez.</p>
+  </footer>
+
+  <!-- Script JS externo cargado al final -->
+  <script src="js/app.js"></script>
+</body>
+</html>
