@@ -39,7 +39,7 @@ function actualizarInterfaz() {
   calcularPresupuesto();
 }
 
-function calcularPresupuesto() {
+function calcularPresupuesto(mostrarAlerta = false) {
   const prod = document.getElementById('tipoProducto').value;
   const cant = parseInt(document.getElementById('cantInput').value, 10);
   const out = document.getElementById('outCalc');
@@ -53,7 +53,7 @@ function calcularPresupuesto() {
   if (prod === 'serigrafia') {
     if (!cant || cant < 100) {
       out.style.display = 'none';
-      alert("El pedido mínimo para globos con impresión de 1 tinta es de 100 unidades.");
+      if (mostrarAlerta) alert("El pedido mínimo para globos con impresión de 1 tinta es de 100 unidades.");
       return;
     }
 
@@ -66,7 +66,7 @@ function calcularPresupuesto() {
   } else if (prod === 'multicolor') {
     if (!cant || cant < 500) {
       out.style.display = 'none';
-      alert("El pedido mínimo para impresión multicolor de hasta 5 colores es de 500 unidades.");
+      if (mostrarAlerta) alert("El pedido mínimo para impresión multicolor de hasta 5 colores es de 500 unidades.");
       return;
     }
 
@@ -76,7 +76,7 @@ function calcularPresupuesto() {
   } else if (prod === 'cinco_caras') {
     if (!cant || cant < 500) {
       out.style.display = 'none';
-      alert("El pedido mínimo para impresión de 5 caras es de 500 unidades.");
+      if (mostrarAlerta) alert("El pedido mínimo para impresión de 5 caras es de 500 unidades.");
       return;
     }
 
@@ -90,7 +90,9 @@ function calcularPresupuesto() {
 
     if (!cant || cant < minReq) {
       out.style.display = 'none';
-      alert(esCombo ? "El pedido mínimo en combo para globos número 40 es de 1 unidad." : "El pedido mínimo individual de globos número 40 es de 2 unidades.");
+      if (mostrarAlerta) {
+        alert(esCombo ? "El pedido mínimo en combo para globos número 40 es de 1 unidad." : "El pedido mínimo individual de globos número 40 es de 2 unidades.");
+      }
       return;
     }
 
@@ -108,4 +110,4 @@ function calcularPresupuesto() {
   out.style.display = 'block';
 }
 
-window.addEventListener('DOMContentLoaded', calcularPresupuesto);
+window.addEventListener('DOMContentLoaded', () => calcularPresupuesto(false));
