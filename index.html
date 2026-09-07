@@ -112,7 +112,7 @@
         </div>
         <div>
           <label for="cantInput" id="cantLabel">Cantidad (Mínimo 100)</label>
-          <input type="number" id="cantInput" value="100" min="100" step="50" oninput="calcularPresupuesto()" />
+          <input type="number" id="cantInput" value="100" min="100" step="50" onchange="calcularPresupuesto()" />
         </div>
         <div class="checkbox-wrap" id="comboWrap" style="display:none;">
           <input type="checkbox" id="comboCheck" onchange="calcularPresupuesto()" />
