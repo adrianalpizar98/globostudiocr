@@ -1,3 +1,11 @@
+/* Estilos generales básicos */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 /* Estilos para la barra superior de idioma y redes */
 .top-bar {
     display: flex;
@@ -6,7 +14,6 @@
     padding: 10px 20px;
     background-color: #111;
     color: #fff;
-    font-family: sans-serif;
 }
 
 .social-icons a {
@@ -38,6 +45,12 @@
 
 .lang-btn:hover {
     color: #ffcc00;
+}
+
+/* Estilos de la sección principal */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
 }
 
 /* Estilos para el Botón Flotante de WhatsApp */
