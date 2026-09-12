@@ -1,4 +1,4 @@
-// Diccionario de traducciones simples
+// Diccionario de traducciones simples ejecutado 100% en el cliente
 const translations = {
     es: {
         hero_title: "Globos Impresos y Personalizados",
@@ -10,7 +10,7 @@ const translations = {
     }
 };
 
-// Función para cambiar idioma
+// Función para cambiar idioma dinámicamente
 function changeLanguage(lang) {
     const elements = document.querySelectorAll("[data-i18n]");
     elements.forEach(el => {
@@ -23,7 +23,7 @@ function changeLanguage(lang) {
     localStorage.setItem("preferred_lang", lang);
 }
 
-// Carga el idioma guardado previamente al abrir la página
+// Carga el idioma guardado previamente al abrir o recargar la página
 document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem("preferred_lang") || "es";
     changeLanguage(savedLang);
